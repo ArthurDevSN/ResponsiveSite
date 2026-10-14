@@ -27,13 +27,13 @@ npm run preview  # serve o build de produção
 
 ## Páginas e interações
 
-| Página | O que explorar |
-| --- | --- |
-| Início | Prévia desktop/mobile, etapas de construção interativas e FAQ |
-| Recursos | Componentes, responsividade e animação em um pequeno laboratório |
-| Soluções | Seis composições de templates com filtros por categoria |
-| Planos | Três planos ilustrativos, alternância mensal/anual e cálculo de desconto |
-| Aprender | Seis aulas, exemplos copiáveis, filtros e conclusão de aulas |
+| Página   | O que explorar                                                           |
+| -------- | ------------------------------------------------------------------------ |
+| Início   | Prévia desktop/mobile, etapas de construção interativas e FAQ            |
+| Recursos | Componentes, responsividade e animação em um pequeno laboratório         |
+| Soluções | Seis composições de templates com filtros por categoria                  |
+| Planos   | Três planos ilustrativos, alternância mensal/anual e cálculo de desconto |
+| Aprender | Seis aulas, exemplos copiáveis, filtros e conclusão de aulas             |
 
 A navegação usa rotas no hash (`#/recursos`, por exemplo), sem dependência adicional de roteamento. Recarregar uma página e usar voltar/avançar mantém a navegação funcionando em hospedagens estáticas.
 
@@ -41,13 +41,52 @@ O botão **Começar projeto** guarda um rascunho com nome e modelo em `localStor
 
 ## Organização para aprender
 
-- `src/App.jsx`: navegação, menu mobile e composição das páginas.
-- `src/components/HomePage.jsx`: apresentação, prévia interativa, demonstração de código e FAQ.
-- `src/components/Pages.jsx`: páginas de recursos, soluções, planos e aprendizado; arrays de conteúdo e exemplos.
-- `src/components/ProjectDialog.jsx`: criação e retomada do rascunho.
-- `src/components/Logo.jsx`: marca reutilizável.
-- `src/hooks/useDialog.js`: Escape, controle de foco e bloqueio da rolagem para diálogos.
-- `src/index.css`: tokens de cor, estilos globais, foco e movimento reduzido.
-- `src/App.css` e `src/components/Pages.css`: estilos dos componentes e breakpoints.
+Cada aba tem sua própria pasta em `src/pages/`, com componente, estilos e conteúdo:
+
+```text
+src/
+├── pages/
+│   ├── inicio/
+│   │   ├── InicioPage.jsx
+│   │   ├── InicioPage.css
+│   │   ├── content.js
+│   │   └── components/
+│   │       ├── SitePreview.jsx
+│   │       └── BuildSection.jsx
+│   ├── recursos/
+│   │   ├── RecursosPage.jsx
+│   │   ├── RecursosPage.css
+│   │   └── content.js
+│   ├── solucoes/
+│   │   ├── SolucoesPage.jsx
+│   │   ├── SolucoesPage.css
+│   │   └── content.js
+│   ├── planos/
+│   │   ├── PlanosPage.jsx
+│   │   ├── PlanosPage.css
+│   │   └── content.js
+│   └── aprender/
+│       ├── AprenderPage.jsx
+│       ├── AprenderPage.css
+│       ├── content.js
+│       └── LessonDialog.jsx
+├── components/
+│   ├── Logo.jsx
+│   ├── ProjectDialog.jsx
+│   ├── PageIntro.jsx
+│   ├── Reveal.jsx
+│   └── PageLayout.css
+├── hooks/useDialog.js
+├── App.jsx
+├── App.css
+└── index.css
+```
+
+- Edite o componente da aba para alterar sua estrutura e suas interações.
+- Edite o `content.js` da aba para alterar textos, dados, modelos ou exemplos de código.
+- Edite o CSS da aba para ajustar seu visual e seus breakpoints.
+- Use `components/` para elementos compartilhados entre páginas. `PageLayout.css` concentra a estrutura comum das páginas internas, seus filtros e chamadas finais.
+- `App.jsx` compõe as páginas e controla a navegação, o menu mobile e os rascunhos. `App.css` mantém os estilos compartilhados da aplicação, navegação e diálogos de projeto.
+- `index.css` define tokens de cor, estilos globais, foco e movimento reduzido; `hooks/useDialog.js` cuida de Escape, foco e bloqueio da rolagem.
 
 Os diálogos permitem navegação por teclado e devolvem o foco ao fechar. Animações respeitam `prefers-reduced-motion`. O layout foi conferido em 320, 390, 768, 1024 e 1440 px, e os fluxos de navegação, filtros, aulas e rascunhos foram exercitados em Chromium.

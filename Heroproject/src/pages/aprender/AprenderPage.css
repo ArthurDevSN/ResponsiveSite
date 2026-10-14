@@ -1,0 +1,411 @@
+.pg-learning-banner {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  border: 1px solid #ad7aff24;
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 40px;
+  background:
+    radial-gradient(ellipse at 85% 50%, #ad7aff10, transparent 70%), #11111b;
+}
+.pg-learning-icon {
+  display: grid;
+  place-items: center;
+  width: 67px;
+  height: 67px;
+  border: 1px solid #ad7aff2d;
+  color: #b399d7;
+  background: #ad7aff0a;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+.pg-learning-banner h2 {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  font-size: 22px;
+  margin-top: 8px;
+  margin-bottom: 9px;
+}
+.pg-learning-banner p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.pg-learning-banner .section-label {
+  font-size: 9px;
+}
+.pg-learning-progress {
+  margin-left: auto;
+  min-width: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pg-learning-progress strong {
+  font-size: 31px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.pg-learning-progress strong span {
+  font-size: 15px;
+  color: #70677e;
+}
+.pg-learning-progress > span {
+  font-size: 10px;
+  margin-top: 4px;
+  color: #95889f;
+}
+.pg-progress-track {
+  width: 100%;
+  height: 3px;
+  margin-top: 16px;
+  border-radius: 4px;
+  background: #ffffff0b;
+  overflow: hidden;
+}
+.pg-progress-track i {
+  display: block;
+  height: 100%;
+  background: #b58bed;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+.pg-lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.pg-lesson-card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.2s;
+}
+.pg-lesson-card:hover {
+  border-color: #ad7aff40;
+}
+.pg-lesson-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pg-lesson-number {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #91879e;
+  font-variant-numeric: tabular-nums;
+}
+.pg-lesson-category {
+  font-size: 9px;
+  padding: 4px 8px;
+  color: #a796bd;
+  border: 1px solid #ad7aff16;
+  background: #ad7aff06;
+  border-radius: 5px;
+}
+.pg-lesson-icon {
+  display: flex;
+  color: #baa2d6;
+  margin-block: 27px 21px;
+}
+.pg-lesson-card h2 {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin-bottom: 11px;
+}
+.pg-lesson-card > p {
+  flex: 1;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  min-height: 45px;
+  margin-bottom: 26px;
+}
+.pg-lesson-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-inline: -25px;
+  padding: 13px 25px;
+  border-top: 1px solid var(--border);
+  background: #ffffff01;
+}
+.pg-lesson-card-bottom > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  color: #898095;
+}
+.pg-lesson-card-bottom > button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 33px;
+  font-size: 10px;
+  color: #c4afd9;
+}
+.pg-lesson-card-bottom > button:hover {
+  color: #e3ccff;
+}
+.pg-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #06050edb;
+  backdrop-filter: blur(8px);
+  z-index: 120;
+}
+.pg-lesson-dialog {
+  width: 100%;
+  max-width: 720px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #ad7aff30;
+  border-radius: 19px;
+  background: #11121b;
+  box-shadow: 0 30px 100px #0009;
+  padding: 30px;
+}
+.pg-dialog-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.pg-close-button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: #aaa1b7;
+}
+.pg-close-button:hover {
+  background: #ffffff07;
+  color: var(--text);
+}
+.pg-lesson-dialog h2 {
+  font-size: clamp(23px, 3vw, 31px);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  margin-bottom: 17px;
+}
+.pg-lesson-intro {
+  color: #a49bac;
+  font-size: 13px;
+  line-height: 1.85;
+  margin-bottom: 25px;
+}
+.pg-lesson-dialog h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.pg-lesson-steps {
+  padding-left: 19px;
+  display: grid;
+  gap: 8px;
+  color: #a49bac;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+.pg-lesson-steps li::marker {
+  color: #b799dd;
+}
+.pg-code-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 14px;
+  background: #191720;
+  border: 1px solid #ffffff08;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+.pg-code-heading > span {
+  color: #8e809d;
+  font-size: 10px;
+}
+.pg-code-heading > button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  color: #bba1d7;
+  font-size: 10px;
+}
+.pg-lesson-dialog pre {
+  border: 1px solid #ffffff08;
+  border-radius: 0 0 8px 8px;
+  background: #0b0b12;
+  color: #c3acd8;
+  font-size: 11px;
+  line-height: 1.8;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 0;
+  tab-size: 2;
+}
+.pg-copy-status {
+  font-size: 10px;
+  color: #c0a8da;
+  min-height: 20px;
+  margin-top: 7px;
+}
+.pg-lesson-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 15px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.pg-lesson-footer > span {
+  font-size: 11px;
+  color: #95869f;
+}
+.pg-lesson-footer > button {
+  flex-shrink: 0;
+  font-size: 11px;
+}
+.pg-lesson-footer > button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+@media (max-width: 1050px) {
+  .pg-lesson-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .pg-learning-banner {
+    flex-wrap: wrap;
+    padding: 25px;
+    gap: 20px;
+  }
+  .pg-learning-banner > div:nth-child(2) {
+    flex: 1;
+    min-width: 190px;
+  }
+  .pg-learning-banner h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .pg-learning-progress {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .pg-learning-progress > span {
+    flex-shrink: 0;
+  }
+  .pg-learning-progress > strong {
+    flex-shrink: 0;
+    font-size: 25px;
+  }
+  .pg-progress-track {
+    margin-top: 0;
+  }
+  .pg-lesson-card {
+    padding-inline: 20px;
+  }
+  .pg-lesson-card-bottom {
+    margin-inline: -20px;
+    padding-inline: 20px;
+  }
+  .pg-lesson-card-bottom {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 500px) {
+  .pg-lesson-grid {
+    grid-template-columns: 1fr;
+  }
+  .pg-learning-banner {
+    padding: 24px;
+  }
+  .pg-learning-banner > div:nth-child(2) {
+    min-width: 140px;
+  }
+  .pg-learning-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .pg-learning-banner h2 {
+    font-size: 17px;
+  }
+  .pg-learning-banner p {
+    font-size: 10px;
+  }
+  .pg-learning-progress {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pg-progress-track {
+    flex: 1;
+    min-width: 40px;
+  }
+  .pg-lesson-card {
+    padding: 25px 25px 0;
+  }
+  .pg-lesson-card-bottom {
+    margin-inline: -25px;
+    padding-inline: 25px;
+  }
+  .pg-lesson-card > p {
+    min-height: 0;
+  }
+  .pg-dialog-backdrop {
+    padding: 10px;
+  }
+  .pg-lesson-dialog {
+    border-radius: 13px;
+    padding: 21px;
+    max-height: calc(100dvh - 20px);
+  }
+  .pg-lesson-dialog pre {
+    padding: 15px;
+    font-size: 10px;
+  }
+  .pg-lesson-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .pg-code-heading {
+    gap: 6px;
+  }
+  .pg-code-heading > span {
+    font-size: 9px;
+  }
+  .pg-code-heading > button {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-dialog-backdrop * {
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

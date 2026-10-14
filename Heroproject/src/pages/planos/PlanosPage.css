@@ -1,0 +1,238 @@
+.pg-billing {
+  display: flex;
+  width: fit-content;
+  margin: 27px auto 0;
+  border: 1px solid var(--border);
+  background: #11121b;
+  border-radius: 9px;
+  padding: 5px;
+  gap: 3px;
+}
+.pg-billing > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 19px;
+  min-height: 37px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.pg-billing > button[aria-pressed="true"] {
+  color: var(--text);
+  background: #252331;
+  box-shadow: 0 2px 4px #0002;
+}
+.pg-billing > button span {
+  color: #cfb2fa;
+  font-size: 9px;
+  background: #ad7aff20;
+  border-radius: 4px;
+  padding: 3px 5px;
+}
+.pg-demo-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: -25px auto 36px;
+  max-width: 700px;
+}
+.pg-demo-note svg {
+  flex-shrink: 0;
+  color: #a78dce;
+}
+.pg-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.pg-plan-card {
+  position: relative;
+  padding: 33px 27px 32px;
+  background: #11121a;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+}
+.pg-plan-featured {
+  background: linear-gradient(150deg, #ad7aff10, #14131e 65%);
+  border-color: #ad7aff65;
+  box-shadow: 0 10px 65px #ad7aff07;
+}
+.pg-plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 5px;
+  background: #b58bed;
+  color: #241632;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.pg-plan-icon {
+  display: flex;
+  color: #a694c0;
+  margin-bottom: 23px;
+}
+.pg-plan-featured .pg-plan-icon {
+  color: var(--accent);
+}
+.pg-plan-card h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+.pg-plan-description {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  min-height: 37px;
+}
+.pg-plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 24px;
+}
+.pg-plan-price > span:first-child {
+  color: #aaa2b8;
+  font-size: 16px;
+}
+.pg-plan-price strong {
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+.pg-plan-price > span:last-child {
+  font-size: 12px;
+  color: var(--muted);
+}
+.pg-plan-period {
+  font-size: 10px;
+  color: #878194;
+  margin-top: 9px;
+  margin-bottom: 28px;
+  min-height: 17px;
+}
+.pg-plan-card > button {
+  width: 100%;
+  font-size: 12px;
+}
+.pg-plan-divider {
+  height: 1px;
+  background: var(--border);
+  margin-block: 27px 23px;
+}
+.pg-plan-card h3 {
+  font-size: 10px;
+  color: #d0c6dc;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.pg-plan-card ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+.pg-plan-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 11px;
+  color: #a69daf;
+  line-height: 1.6;
+}
+.pg-plan-card li svg {
+  color: #b495d9;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.pg-pricing-help {
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 44px auto 0;
+  padding: 25px 0;
+}
+.pg-help-mark {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: #a999ba;
+  font-size: 17px;
+}
+.pg-pricing-help h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.pg-pricing-help p {
+  font-size: 11px;
+  color: var(--muted);
+}
+.pg-pricing-help button {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+@media (max-width: 1050px) {
+  .pg-plan-card {
+    padding-inline: 22px;
+  }
+  .pg-plan-price strong {
+    font-size: 38px;
+  }
+}
+@media (max-width: 760px) {
+  .pg-pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+    gap: 28px;
+  }
+  .pg-plan-description {
+    min-height: 0;
+  }
+  .pg-plan-card {
+    padding: 28px;
+  }
+  .pg-plan-price strong {
+    font-size: 45px;
+  }
+  .pg-pricing-help {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .pg-pricing-help button {
+    margin-left: 54px;
+  }
+}
+@media (max-width: 500px) {
+  .pg-demo-note {
+    margin-top: -12px;
+    font-size: 10px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .pg-demo-note svg {
+    margin-top: 2px;
+  }
+}

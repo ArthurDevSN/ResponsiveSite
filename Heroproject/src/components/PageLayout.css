@@ -1,0 +1,116 @@
+.secondary-page {
+  padding-top: 78px;
+  padding-bottom: 90px;
+}
+.pg-intro {
+  max-width: 820px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+.pg-intro .section-title {
+  margin-top: 17px;
+  margin-bottom: 19px;
+  line-height: 1.12;
+}
+.pg-intro .section-copy {
+  max-width: 630px;
+  margin-inline: auto;
+}
+.pg-accent {
+  color: var(--accent);
+}
+.pg-bottom-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid var(--border);
+  margin-top: 74px;
+  padding-top: 36px;
+}
+.pg-bottom-cta h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.8px;
+}
+.pg-bottom-cta .section-copy {
+  margin-top: 9px;
+  font-size: 13px;
+}
+.pg-cta-actions {
+  display: flex;
+  gap: 10px;
+}
+.pg-filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.pg-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pg-filter-chips button {
+  min-height: 38px;
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  background: #11121a;
+  font-size: 12px;
+  transition: 0.2s;
+}
+.pg-filter-chips button[aria-pressed="true"] {
+  color: #d6befa;
+  border-color: #ad7aff40;
+  background: #ad7aff12;
+}
+.pg-filter-chips button:hover {
+  border-color: #ad7aff40;
+  color: var(--text);
+}
+.pg-result-count {
+  color: #858295;
+  font-size: 11px;
+}
+@media (max-width: 760px) {
+  .secondary-page {
+    padding-top: 54px;
+    padding-bottom: 60px;
+  }
+  .pg-intro {
+    margin-bottom: 38px;
+  }
+  .pg-bottom-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 50px;
+  }
+  .pg-filter-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+@media (max-width: 500px) {
+  .pg-filter-chips {
+    gap: 6px;
+  }
+  .pg-filter-chips button {
+    padding-inline: 12px;
+    font-size: 11px;
+  }
+  .pg-cta-actions {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .secondary-page * {
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

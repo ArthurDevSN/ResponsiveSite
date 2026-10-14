@@ -6,18 +6,16 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { ArrowUpRight, Layers3, Menu, MousePointer2, X } from "lucide-react";
-import HomePage from "./components/HomePage";
+import "./App.css";
+import "./components/PageLayout.css";
+import InicioPage from "./pages/inicio/InicioPage";
+import RecursosPage from "./pages/recursos/RecursosPage";
+import SolucoesPage from "./pages/solucoes/SolucoesPage";
+import PlanosPage from "./pages/planos/PlanosPage";
+import AprenderPage from "./pages/aprender/AprenderPage";
 import Logo from "./components/Logo";
 import ProjectDialog, { SavedProject } from "./components/ProjectDialog";
 import useDialog from "./hooks/useDialog";
-import {
-  AprenderPage,
-  PlanosPage,
-  RecursosPage,
-  SolucoesPage,
-} from "./components/Pages";
-import "./App.css";
-
 const navigation = [
   { id: "inicio", label: "Início" },
   { id: "recursos", label: "Recursos" },
@@ -87,7 +85,7 @@ function App() {
   };
   const start = (chosen = "Essencial") => setTemplate(chosen);
   const content = {
-    inicio: <HomePage onStart={start} />,
+    inicio: <InicioPage onStart={start} />,
     recursos: <RecursosPage onStart={start} onNavigate={navigate} />,
     solucoes: <SolucoesPage onStart={start} onNavigate={navigate} />,
     planos: <PlanosPage onStart={start} onNavigate={navigate} />,
